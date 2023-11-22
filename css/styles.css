@@ -1,0 +1,234 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*{
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: 'Noto Sans', sans-serif;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.page-header{
+    background: #e1e2e3;
+    padding: 20px;
+}
+
+.content-area{
+    background: #a3bef0;
+    height: 1500px;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    font-weight: 700;
+    font-size: 2rem;
+    transform: scale(.8);
+    width: 80px;
+}
+
+.logo__sub{
+    font-family: 'Dancing Script',cursive;
+    font-size: 1.3rem;
+}
+
+.email-modal{
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.email-modal--visible{
+    visibility: visible;
+    opacity: 1;
+}
+
+.email-modal__close-btn{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    cursor: pointer;
+    background: red;
+}
+
+.email-modal .gg-close{
+    color: white;
+}
+
+.gg-close{
+    --ggs:2
+}
+
+.email-model-container{
+    background:rgba(29,103,200,1);
+    max-width: 700px;
+    width: 100%;
+    color: white;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.email-modal__info{
+    width: 100%;
+    padding: 15px;
+}
+
+.email-modal__side-img img{
+    height: 400px;
+}
+
+.email-modal__info .logo{
+    margin-bottom: 4rem;
+}
+
+.email-modal__info h2{
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+.email-modal__message{
+    color: rgba(221,221,221,0.63);
+    font-weight: 100;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+.email-modal__highlight-text{
+    color: white;
+}
+
+.email-modal__form-group{
+    background: white;
+    display: flex;
+    padding: 5px;
+    margin-bottom: 1.2rem;
+}
+.email-modal__form-group--error{
+    border: 1px solid red;
+}
+
+.email-modal__input{
+    background: white;
+    border: 0px solid;
+    width: 100%;
+    height: 30px;
+}
+.email-modal__button{
+    background: rgba(81,158,71,1);
+    color: white;
+    border: 0;
+    width: 150px;
+    cursor: pointer;
+}
+.email-modal__decline-offer{
+    color: rgba(221,221,221,0.6);
+    text-decoration: underline;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+}
+.email-modal__decline-offer:hover{
+    color: white;
+}
+
+.email-modal__thank{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fbe743;
+    transform: translate3d(100%,0,0);
+    transition: all .4s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.email-thank__title{
+    color: black;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transition: opacity .3s ease-in-out .4s;
+}
+
+.email-thank__message{
+    color: rgba(0,0,0,1);
+    font-weight: 300;
+    font-size: 1.0rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    opacity: 0;
+    transition: opacity .3s ease-in-out .7s;
+}
+
+.email-thank--sucess{
+    transform: translate3d(0,0,0);
+}
+
+.email-thank--sucess .email-thank__title,
+.email-thank--sucess .email-thank__message{
+    opacity: 1;
+}
+
+.email-modal__error-message{
+    color: #fbe743;
+    font-size: .8rem;
+    margin-bottom: .7rem;
+    display: none;
+}
+
+.email-modal__error-message--active{
+    display: block;
+}
