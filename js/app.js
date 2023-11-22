@@ -8,9 +8,7 @@ window.onload = function () {
   let declineOffer = document.getElementsByClassName(
     "email-modal__decline-offer"
   )[0];
-  closeButton.addEventListener("click", () => {
-    emailModal.classList.remove("email-modal--visible");
-  });
+  
   let showModal = () => {
     if (!emailState) {
       emailModal.classList.add("email-modal--visible");
@@ -38,13 +36,16 @@ window.onload = function () {
       .classList.add("email-modal__error-message--active");
     console.log("This is not a valid email address.");
   };
+  function emailIsValid(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+  closeButton.addEventListener("click", () => {
+    closeModal();
+  });
   document.body.addEventListener("mouseleave", () => {
     showModal();
   });
 
-  function emailIsValid(email) {
-    return /\S+@\S+\.\S+/.test(email);
-  }
   let emailInput = document.getElementsByClassName("email-modal__input")[0];
 
   emailInput.addEventListener("click", () => {
